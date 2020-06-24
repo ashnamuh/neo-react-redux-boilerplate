@@ -6,14 +6,18 @@ import browserHistory from 'lib/history'
 import ArticleService, { ArticleState } from './article/reducers'
 import ArticleSaga from './article/sagas'
 
+import LoadingService, { LoadingState } from './loading/reducers'
+
 export interface RootState {
   router: RouterState;
   articleState: ArticleState;
+  loadingState: LoadingState;
 }
 
 const rootReducer = combineReducers({
   router: connectRouter(browserHistory),
   articleState: ArticleService,
+  loadingState: LoadingService
 })
 
 const sagaMiddleware = createSagaMiddleware()
