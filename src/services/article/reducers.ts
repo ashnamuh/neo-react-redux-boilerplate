@@ -5,20 +5,12 @@ import { Article } from 'types/article'
 export type Actions = ActionType<typeof actions>
 
 export interface ArticleState {
-  articles: {
-    data: Article[];
-    loading: LoadingStatus;
-  };
+  articles:  Article[];
 }
 
 const initialState: ArticleState = {
-  articles: {
-    data: [],
-    loading: 'initial'
-  }
+  articles: []
 }
 
 export default createReducer<ArticleState, Actions>(initialState)
-  .handleAction(actions.fetchArticleListAsync.request, (state) => ({ ...state,  articles: { ...state.articles, loading: 'loading' } }))
-  .handleAction(actions.fetchArticleListAsync.success, (state, action) => ({ ...state,  articles: { data: action.payload, loading: 'loaded' } }))
-  .handleAction(actions.fetchArticleListAsync.failure, (state) => ({ ...state,  articles: { ...state.articles, loading: 'loaded' } }))
+  .handleAction(actions.fetchArticleListAsync.success, (state, action) => ({ ...state,  articles: action.payload }))
