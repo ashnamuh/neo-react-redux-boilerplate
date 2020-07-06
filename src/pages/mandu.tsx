@@ -1,9 +1,7 @@
 import * as React from 'react'
 
+import ManduTemplate from 'components/templates/mandu'
+
 export default function ManduPage() {
-  return (
-    <>
-      <h1>Mandu page</h1>
-    </>
-  )
+  return (<ManduTemplate />)
 }
