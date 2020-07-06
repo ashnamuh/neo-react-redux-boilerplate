@@ -1,7 +1,7 @@
 import { put, all, takeEvery, call } from 'redux-saga/effects'
 import { ActionType } from 'typesafe-actions'
 import * as actions from './actions'
-import * as ArticleModel from 'models/Article'
+import * as ArticleModel from './requests'
 
 export function* fetchArticleListSaga(action: ActionType<typeof actions.fetchArticleListAsync.request>) {
   try {
