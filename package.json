@@ -34,7 +34,7 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "start": "BROWSER=none react-app-rewired start",
+    "dev": "BROWSER=none react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "jest",
     "eject": "react-app-rewired eject",
